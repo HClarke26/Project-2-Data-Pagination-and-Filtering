@@ -3,16 +3,11 @@ Treehouse Techdegree:
 FSJS Project 2 - Data Pagination and Filtering
 */
 
-/*
-For assistance:
-   Check out the "Project Resources" section of the Instructions tab: https://teamtreehouse.com/projects/data-pagination-and-filtering#instructions
-   Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
-*/
+const itemsPerpage = 9; // Number of students per page
 
 // Function to create page with a given number of students and their infromation
 function showPage(list, page) {
 
-   const itemsPerpage = 9; // Number of students per page
    let startIndex = (page * itemsPerpage) - itemsPerpage ;
    let endIndex = page * itemsPerpage ;
 
@@ -39,14 +34,57 @@ function showPage(list, page) {
    };
  };
 
- showPage(data, 1);
+
+// addPagination function to create and insert/append the elements needed for the pagination buttons
+function addPagination(list) {
+
+   // Calculating number of pages required 
+   numOfPages = Math.ceil(list.length / itemsPerpage)
+
+   linkList = document.querySelector('.link-list')
+   linkList.innerHTML = '';
+      // Looping to create the correct amount of buttons
+     for (i = 1; i <= numOfPages ; i++) {
+         let button =  
+         `<li>
+         <button type="button">${i}</button>
+         </li>`;
+         linkList.insertAdjacentHTML("beforeend", button);
+      }
+
+   // giving the first pagination button a class of "active"
+   document.querySelector(".link-list button").className = "active";
+
+   // listening for click and showing corresponding page
+   linkList.addEventListener('click',(e) => {
+      
+      if (e.target.tagName === "BUTTON") {
+         linkList.querySelector("button[class=active]").className = "";
+         e.target.className = "active";
+         showPage(list, e.target.textContent);
+      }
+   });
+ };
 
 
-/*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
-*/
+// Adding search bar function
+function addSearchBar() {
+   // Selecting header class
+   const selectHeader = document.querySelector(".header");
+   // Creating search bar
+   const searchBar = `
+         <label for="search" class="student-search">
+            <span>Search by name</span>
+            <input id="search" placeholder="Search by name...">
+            <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
+         </label>
+       `;
+   // Inserting search bar to the DOM.
+   selectHeader.insertAdjacentHTML("beforeend", searchBar);
+}
 
 
-
-// Call functions
+// Calling functions
+showPage(data, 1);
+addPagination(data);
+addSearchBar();
