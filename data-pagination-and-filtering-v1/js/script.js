@@ -66,24 +66,6 @@ function addPagination(list) {
    });
  };
 
-
-// Adding search bar function
-function addSearchBar() {
-   // Selecting header class
-   const selectHeader = document.querySelector(".header");
-   // Creating search bar
-   const searchBar = `
-         <label for="search" class="student-search">
-            <span>Search by name</span>
-            <input id="search" placeholder="Search by name...">
-            <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
-         </label>
-       `;
-   // Inserting search bar to the DOM.
-   selectHeader.insertAdjacentHTML("beforeend", searchBar);
-}
-
-
 // Calling functions
 showPage(data, 1);
 addPagination(data);
