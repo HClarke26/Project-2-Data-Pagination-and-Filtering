@@ -69,4 +69,4 @@ function addPagination(list) {
 // Calling functions
 showPage(data, 1);
 addPagination(data);
-addSearchBar();
+
