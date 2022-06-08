@@ -52,11 +52,8 @@ function addPagination(list) {
          linkList.insertAdjacentHTML("beforeend", button);
       }
 
-<<<<<<< HEAD:js/script.js
    // giveing the first pagination button a class of "active"
-=======
    // giving the first pagination button a class of "active"
->>>>>>> parent of ba57804 (File move):data-pagination-and-filtering-v1/js/script.js
    document.querySelector(".link-list button").className = "active";
 
    // listening for click and showing corresponding page
@@ -70,9 +67,7 @@ function addPagination(list) {
    });
  };
 
-<<<<<<< HEAD:js/script.js
-=======
-
+/*
 // Adding search bar function
 function addSearchBar() {
    // Selecting header class
@@ -88,9 +83,8 @@ function addSearchBar() {
    // Inserting search bar to the DOM.
    selectHeader.insertAdjacentHTML("beforeend", searchBar);
 }
+*/
 
-
->>>>>>> parent of ba57804 (File move):data-pagination-and-filtering-v1/js/script.js
 // Calling functions
 showPage(data, 1);
 addPagination(data);
