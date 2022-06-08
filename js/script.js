@@ -66,6 +66,7 @@ function addPagination(list) {
    });
  };
 
+<<<<<<< HEAD:js/script.js
 
 // Function to create serach bar
 function addSearchBar() {
@@ -119,7 +120,9 @@ inputSearch.addEventListener("keyup", (e) => {
  }); */
 
 
+=======
+>>>>>>> dc1f26af7fc90f18e03bf215e7a2d1c847598417:data-pagination-and-filtering-v1/js/script.js
 // Calling functions
 showPage(data, 1);
 addPagination(data);
-addSearchBar();
+
