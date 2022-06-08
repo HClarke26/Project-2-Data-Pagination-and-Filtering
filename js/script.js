@@ -52,10 +52,10 @@ function addPagination(list) {
          linkList.insertAdjacentHTML("beforeend", button);
       }
 
-   // giving the first pagination button a class of "active"
+   // Giving the first pagination button a class of "active"
    document.querySelector(".link-list button").className = "active";
 
-   // listening for click and showing corresponding page
+   // Listening for click and showing corresponding page
    linkList.addEventListener('click',(e) => {
       
       if (e.target.tagName === "BUTTON") {
@@ -67,7 +67,7 @@ function addPagination(list) {
  };
 
 
-// Adding search bar function
+// Function to create serach bar
 function addSearchBar() {
    // Selecting header class
    const selectHeader = document.querySelector(".header");
@@ -82,6 +82,41 @@ function addSearchBar() {
    // Inserting search bar to the DOM.
    selectHeader.insertAdjacentHTML("beforeend", searchBar);
 }
+
+
+errorMessage.className = 'errorMessage';
+searchBar.parentNode.appendChild(errorMessage);
+
+
+//searchFilter function is used to find a student by first or last name, errorMessage will be returned if there are no matches
+/*function filterStudents(userInput, studentsList){
+   const search = document.getElementById("search"); 
+   const errorMessage = document.createElement('p'); 
+   
+   let filteredResults = [];
+   errorMessage.textContent = '';
+   for(let i = 0 ; i < studentsList.length; i++){
+      if(studentsList[i].name.first.toLowerCase().includes(userInput.toLowerCase()) || 
+      studentsList[i].name.last.toLowerCase().includes(userInput.toLowerCase()) ){
+         filteredResults.push(studentsList[i]);
+         errorMessage.style.display="none";
+      } else if (filteredResults.length == 0) { 
+         errorMessage.textContent = '" ' + userInput +' " '+ ' is not found, please try again.';
+         errorMessage.style.display="block";
+      }
+   }
+   showPage(filteredResults,1);
+   addPagination(filteredResults);
+}*/
+
+
+
+/*let searchName= "";
+const inputSearch = document.querySelector("#search");
+inputSearch.addEventListener("keyup", (e) => {
+   searchName = e.target.value;
+   searchFilter(searchName, data);
+ }); */
 
 
 // Calling functions
